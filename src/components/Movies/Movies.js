@@ -3,7 +3,6 @@ import './Movies.css';
 import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
-import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
@@ -12,7 +11,6 @@ function Movies({isLoading}) {
         <div className="movies">
             <Header/>
             <SearchForm/>
-            <FilterCheckbox isChecked/>
             <MoviesCardList isLoading={isLoading}/>
             <Footer/>
         </div>

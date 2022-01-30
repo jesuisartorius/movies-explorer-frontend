@@ -42,6 +42,7 @@ function Navigation() {
                     className="navigation__account-link"
                 >
                     Аккаунт
+                    <div className='navigation__user-icon' />
                 </Link>
             </div>
             <button
