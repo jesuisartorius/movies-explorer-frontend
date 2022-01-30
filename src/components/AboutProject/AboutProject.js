@@ -23,12 +23,12 @@ const AboutProject = React.forwardRef((props, ref) => (
             </div>
 
             <div className="diagramma">
-                <div className="diagramma__left-side">
-                    <h3 className="diagramma__cell diagramma__cell_side_left">1
+                <div className="diagramma__backend">
+                    <h3 className="diagramma__cell diagramma__cell_backend">1
                         неделя</h3>
                     <p className="diagramma__caption">Back-end</p>
                 </div>
-                <div className="diagramma__right-side">
+                <div className="diagramma__frontend">
                     <h3 className="diagramma__cell">4 недели</h3>
                     <p className="diagramma__caption">Front-end</p>
                 </div>

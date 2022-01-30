@@ -21,13 +21,6 @@ function MoviesCardList({isLoading}) {
                         <MoviesCard/>
                     </ul>
                 )}
-            <button
-                className="movies-cardlist__button"
-                type="button"
-                onClick
-            >
-                Ещё
-            </button>
         </section>
 
     );

@@ -140,11 +140,11 @@
         -ms-flex-pack: justify;
         justify-content: space-between;
         max-width: 520px;
-        height: 100vh;
+        height: 80%;
         padding-top: 159px;
         padding-bottom: 90px;
         margin-bottom: 27px;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         background-color: white;

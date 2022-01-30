@@ -3,7 +3,7 @@
 }
 
 .header__wrapper_page_main {
-    background-color: #fafafa;
+    background-color: #ffffff;
 }
 
 .header {
@@ -11,7 +11,7 @@
     width: 100%;
     margin: auto;
     min-height: 74px;
-    padding: 0px 70px;
+    padding: 0 70px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;

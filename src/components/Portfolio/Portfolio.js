@@ -8,14 +8,16 @@ function Portfolio() {
             <ul className="portfolio__links">
                 <li className="portfolio__links-item">
                     <p className="portfolio__link-title">Статичный сайт</p>
-                    <a href="/movies" className="portfolio__link"
+                    <a href="https://github.com/thisisartorius/how-to-learn"
+                       className="portfolio__link" target="_blank"
                        rel="noreferrer">
                         ↗
                     </a>
                 </li>
                 <li className="portfolio__links-item">
                     <p className="portfolio__link-title">Адаптивный сайт</p>
-                    <a href="/movies" className="portfolio__link"
+                    <a href="https://github.com/thisisartorius/russian-travel"
+                       className="portfolio__link" target="_blank"
                        rel="noreferrer">
                         ↗
                     </a>
@@ -23,7 +25,7 @@ function Portfolio() {
                 <li className="portfolio__links-item">
                     <p className="portfolio__link-title">Одностраничное
                         приложение</p>
-                    <a href="https://yandex.ru/"
+                    <a href="https://github.com/thisisartorius/react-mesto-api-full"
                        className="portfolio__link" target="_blank"
                        rel="noreferrer">
                         ↗

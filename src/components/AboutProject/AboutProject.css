@@ -48,12 +48,12 @@
     text-align: center;
 }
 
-.diagramma__left-side {
+.diagramma__backend {
     width: 20%;
     margin: 0;
 }
 
-.diagramma__right-side {
+.diagramma__frontend {
     width: 80%;
     margin: 0;
 }
@@ -67,7 +67,7 @@
     margin: 0;
 }
 
-.diagramma__cell_side_left {
+.diagramma__cell_backend {
     background-color: #000000;
     color: #ffffff;
 }

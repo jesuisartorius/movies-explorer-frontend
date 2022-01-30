@@ -12,6 +12,13 @@ function Movies({isLoading}) {
             <Header/>
             <SearchForm/>
             <MoviesCardList isLoading={isLoading}/>
+            <button
+                className="movies-cardlist__button"
+                type="button"
+                onClick
+            >
+                Ещё
+            </button>
             <Footer/>
         </div>
     );

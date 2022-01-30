@@ -13,8 +13,8 @@ function Main() {
 
     return (
         <>
-            <Header/>
             <main className="main">
+                <Header/>
                 <Promo/>
                 <AboutProject/>
                 <Techs/>
