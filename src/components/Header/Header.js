@@ -3,31 +3,26 @@ import './Header.css';
 import {Link, useRouteMatch} from 'react-router-dom';
 import logo from '../../images/header-logo.svg';
 import Navigation from '../Navigation/Navigation';
+import PropTypes from "prop-types";
 
-function Header() {
+function Header({ loggedIn }) {
     const isMain = useRouteMatch({path: '/', exact: true});
     return (
         <>
-            {isMain ? (
+            { isMain && !loggedIn ? (
                 <div className="header__wrapper header__wrapper_page_landing">
                     <header className="header">
                         <Link to="." className="header__link">
-                            <img src={logo} alt="Logo"
-                                 className="header__logo"/>
+                            <img src={logo} alt="Логотип" className="header__logo" />
                         </Link>
                         <nav className="header__container">
-                            <Link to="signup"
-                                  className="header__link header__register-link">
-                                Регистрация
-                            </Link>
-                            <Link to="signin" className="header__login-link">
-                                Войти
-                            </Link>
+                            <Link to="signup" className="header__link header__register-link">Регистрация</Link>
+                            <Link to="signin" className="header__login-link">Войти</Link>
                         </nav>
                     </header>
                 </div>
             ) : (
-                <div className="header__wrapper header__wrapper_page_main">
+                <div className={`header__wrapper ${isMain ? 'header__wrapper_page_landing' : 'header__wrapper_page_main'}`}>
                     <header className="header">
                         <Link to="." className="header__link">
                             <img src={logo} alt="Логотип" className="header__logo" />
@@ -39,5 +34,9 @@ function Header() {
         </>
     );
 }
+
+Header.propTypes = {
+    loggedIn: PropTypes.bool.isRequired,
+};
 
 export default Header;

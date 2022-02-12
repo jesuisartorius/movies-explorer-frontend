@@ -6,14 +6,14 @@ import Techs from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
 import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
+import PropTypes from "prop-types";
 
 
-function Main() {
-
+function Main({ loggedIn }) {
 
     return (
         <>
-            <Header/>
+            <Header loggedIn={loggedIn}/>
             <main className="main">
                 <Promo/>
                 <AboutProject/>
@@ -25,5 +25,9 @@ function Main() {
         </>
     );
 }
+
+Main.propTypes = {
+    loggedIn: PropTypes.bool.isRequired,
+};
 
 export default Main;

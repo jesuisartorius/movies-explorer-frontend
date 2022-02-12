@@ -36,7 +36,6 @@
     background-color: transparent;
     border: none;
     outline: none;
-    color: #fff;
     box-sizing: border-box;
     margin: 0 20px 0 19px;
     padding: 0;
@@ -46,7 +45,7 @@
 }
 
 .search-form__film-input:focus {
-    border-bottom: 1px solid #3456f3;
+    border-bottom: 1px solid #000000;
 }
 
 .search-form__film-input::placeholder {
