@@ -53,10 +53,7 @@ function SearchForm({findMovies, isLoading}) {
                                  className="search-form__film-icon-btn"/>
                         </button>
                     </div>
-                    <FilterCheckbox
-                        filtered={filtered}
-                        handleCheck={(value) => setFiltered(value)}
-                    />
+
                 </form>
             </div>
         </section>
