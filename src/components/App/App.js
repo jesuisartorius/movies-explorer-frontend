@@ -65,6 +65,7 @@ function App() {
                     localStorage.setItem('savedMovies', JSON.stringify(usersMovies));
                 })
                 .catch((err) => {
+                    alert("Возникоа ошибка.");
                     console.log(err.message);
                 });
         }
@@ -86,6 +87,7 @@ function App() {
                 history.push(location.pathname);
             })
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 console.log(err.message);
                 setLoggedIn(false);
                 setMessages({
@@ -142,6 +144,7 @@ function App() {
                     filterMoviesByName(name);
                 })
                 .catch(() => {
+                    alert("Возникоа ошибка.");
                     setMessages({
                         regForm: null,
                         authForm: null,
@@ -206,6 +209,7 @@ function App() {
                 localStorage.setItem('savedMovies', JSON.stringify([savedMovie, ...savedMovies]));
             })
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 console.log('Ошибка при сохранении фильма', err.message);
             });
     };
@@ -224,6 +228,7 @@ function App() {
                 localStorage.setItem('savedMovies', JSON.stringify(newSavedMovies));
             })
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 console.log('Ошибка при удалении фильма', err.message);
             });
     };
@@ -239,6 +244,7 @@ function App() {
             })
             .then(() => history.push('/movies'))
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 if (err) {
                     setMessages({
                         regForm: null,
@@ -267,6 +273,7 @@ function App() {
                     .then(() => history.push('/movies'));
             })
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 if (err.message === '409') {
                     setMessages({
                         regForm: 'Пользователь с таким email уже существует',
@@ -304,6 +311,7 @@ function App() {
                 setSavedMovies([]);
             })
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 handleError(err);
             });
     };
@@ -324,6 +332,7 @@ function App() {
                 });
             })
             .catch((err) => {
+                alert("Возникоа ошибка.");
                 if (err.message === '409') {
                     setMessages({
                         regForm: null,
