@@ -4,10 +4,8 @@ import './SearchForm.css';
 import {useFormWithValidation} from '../../hooks/useForm';
 import iconSearch from '../../images/search-icon.svg';
 import iconSearchInput from '../../images/search-icon-form.svg'
-import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 function SearchForm({findMovies, isLoading}) {
-    const [filtered, setFiltered] = useState(false);
 
     const {
         values,
@@ -47,6 +45,7 @@ function SearchForm({findMovies, isLoading}) {
                                maxLength="100"
                                placeholder="Фильм"
                                disabled={isLoading}/>
+                        <span className="search-form__input-error" id="movie-error">{error}</span>
                         <button className="search-form__film-find"
                                 type="submit">
                             <img src={iconSearch} alt="Значок с лупой"

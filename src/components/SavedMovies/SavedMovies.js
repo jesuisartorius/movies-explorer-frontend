@@ -10,58 +10,61 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import { SHORT_MOVIE_DURATION } from '../../utils/constants';
 
 function SavedMovies({
-                         isLoading, loggedIn, findMovies, movies, messages, onCardDelete,
-                     }) {
-    const [filtered, setFiltered] = useState(false);
+  isLoading, loggedIn, findMovies, movies, messages, onCardDelete,
+}) {
+  const [filtered, setFiltered] = useState(false);
+  // const SHORT_MOVIE_DURATION = 40;
 
-    const data = !filtered ? movies : movies.filter(
-        (movie) => movie.duration <= SHORT_MOVIE_DURATION,
-    );
+  const data = !filtered ? movies : movies.filter(
+    (movie) => movie.duration <= SHORT_MOVIE_DURATION,
+  );
 
-    return (
-        <div className="saved-movies">
-            <Header loggedIn={loggedIn} />
-            <SearchForm
-                findMovies={findMovies}
-                isLoading={isLoading}
+  return (
+    <div className="saved-movies">
+      <Header loggedIn={loggedIn} />
+      <SearchForm
+        findMovies={findMovies}
+        isLoading={isLoading}
+      />
+      <FilterCheckbox
+        filtered={filtered}
+        handleCheck={(value) => setFiltered(value)}
+      />
+      <MoviesCardList
+        isLoading={isLoading}
+        moviesCards={data}
+        messages={messages}
+      >
+        {
+          (data.map((card) => (
+            <MoviesCard
+              key={card.movieId}
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...card}
+              // onCardClick={onCardClick}
+              onCardDelete={onCardDelete}
             />
-            <FilterCheckbox
-                filtered={filtered}
-                handleCheck={(value) => setFiltered(value)}
-            />
-            <MoviesCardList
-                isLoading={isLoading}
-                moviesCards={data}
-                messages={messages}
-            >
-                {
-                    (data.map((card) => (
-                        <MoviesCard
-                            key={card.movieId}
-                            {...card}
-                            onCardDelete={onCardDelete}
-                        />
-                    )).reverse())
-                }
-            </MoviesCardList>
-            <Footer />
-        </div>
-    );
+          )).reverse())
+        }
+      </MoviesCardList>
+      <Footer />
+    </div>
+  );
 }
 
 SavedMovies.propTypes = {
-    isLoading: PropTypes.bool.isRequired,
-    loggedIn: PropTypes.bool.isRequired,
-    findMovies: PropTypes.func.isRequired,
-    movies: PropTypes.arrayOf(PropTypes.object).isRequired,
-    messages: PropTypes.shape({
-        regForm: PropTypes.string,
-        authForm: PropTypes.string,
-        profileForm: PropTypes.string,
-        searchForm: PropTypes.string,
-        auth: PropTypes.string,
-    }).isRequired,
-    onCardDelete: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  loggedIn: PropTypes.bool.isRequired,
+  findMovies: PropTypes.func.isRequired,
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+  messages: PropTypes.shape({
+    regForm: PropTypes.string,
+    authForm: PropTypes.string,
+    profileForm: PropTypes.string,
+    searchForm: PropTypes.string,
+    auth: PropTypes.string,
+  }).isRequired,
+  onCardDelete: PropTypes.func.isRequired,
 };
 
 export default SavedMovies;
