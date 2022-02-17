@@ -41,7 +41,6 @@ function SearchForm({findMovies, isLoading}) {
                                id="movie"
                                name="movie"
                                type="text"
-                               value={values.movie || ''}
                                maxLength="100"
                                placeholder="Фильм"
                                disabled={isLoading}/>
